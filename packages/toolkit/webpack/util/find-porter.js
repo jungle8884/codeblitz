@@ -23,11 +23,12 @@ exports.findPort = async (basePort, child = false) => {
 };
 
 exports.findPortSync = (basePort) => {
-  const port = execSync(`node -e "require('${__filename}').findPort(${basePort}, true)"`, {
-    encoding: 'utf-8',
-  });
-  if (port === '-1') {
-    throw new Error('find port error');
-  }
+  // const port = execSync(`node -e "require('${__filename}').findPort(${basePort}, true)"`, {
+  //   encoding: 'utf-8',
+  // });
+  const port = '9009';
+  // if (port === '-1') {
+  //   throw new Error('find port error');
+  // }
   return Number(port);
 };
